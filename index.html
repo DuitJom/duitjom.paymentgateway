@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DuitJom - Bayaran Balik Pinjaman</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+}
+
+.header{
+    background:#ffffff;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 2px 10px rgba(0,0,0,0.08);
+}
+
+.logo{
+    max-width:320px;
+    width:100%;
+}
+
+.container{
+    max-width:650px;
+    margin:40px auto;
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.title{
+    text-align:center;
+    color:#0b2f4d;
+    margin-bottom:25px;
+}
+
+.form-group{
+    margin-bottom:15px;
+}
+
+label{
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+    color:#333;
+}
+
+input, select{
+    width:100%;
+    padding:12px;
+    border:1px solid #dcdcdc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+input:focus{
+    outline:none;
+    border-color:#3ca7e3;
+}
+
+.pay-btn{
+    width:100%;
+    background:#0099ff;
+    color:#fff;
+    border:none;
+    padding:15px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:10px;
+    cursor:pointer;
+    margin-top:15px;
+}
+
+.pay-btn:hover{
+    background:#007de0;
+}
+
+.notice{
+    text-align:center;
+    color:#666;
+    margin-top:15px;
+    font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <!-- Tukar kepada URL logo anda -->
+    <img src="https://i.imgur.com/placeholder.png" class="logo" alt="DuitJom">
+</div>
+
+<div class="container">
+
+    <h2 class="title">Bayaran Balik Pinjaman DuitJom</h2>
+
+    <form id="paymentForm">
+
+        <div class="form-group">
+            <label>Nama Penuh</label>
+            <input type="text" id="nama" required>
+        </div>
+
+        <div class="form-group">
+            <label>No. Kad Pengenalan</label>
+            <input type="text" id="ic" placeholder="Contoh: 950101-10-1234" required>
+        </div>
+
+        <div class="form-group">
+            <label>No. Telefon</label>
+            <input type="tel" id="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label>Alamat Email</label>
+            <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+            <label>Jumlah Bayaran (RM)</label>
+            <input type="number" id="amount" step="0.01" required>
+        </div>
+
+        <div class="form-group">
+            <label>ID Application</label>
+            <input type="text" id="appid"
+            placeholder="APP/DG/CUST123456" required>
+        </div>
+
+        <button type="submit" class="pay-btn">
+            Bayar Sekarang
+        </button>
+
+    </form>
+
+    <div class="notice">
+        Semua pembayaran diproses melalui sistem pembayaran selamat.
+    </div>
+
+</div>
+
+<script>
+document.getElementById('paymentForm')
+.addEventListener('submit', function(e){
+
+    e.preventDefault();
+
+    const nama = document.getElementById('nama').value;
+    const amount = document.getElementById('amount').value;
+    const appid = document.getElementById('appid').value;
+
+    alert(
+        "Nama: " + nama +
+        "\\nJumlah: RM" + amount +
+        "\\nID: " + appid +
+        "\\n\\nAnda akan dibawa ke halaman pembayaran."
+    );
+
+    // Redirect payment gateway
+    // window.location.href = "payment.html";
+
+});
+</script>
+
+</body>
+</html>

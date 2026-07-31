@@ -9,6 +9,9 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
     <meta name="google-signin-client_id" content="1005364184697-1d1nl9p1d7vp41pr3fudb6ok1rejoe2i.apps.googleusercontent.com">
 
+    <!-- Facebook SDK Script -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://duitjom.my/">
     <meta property="og:title" content="DuitJom - Portal Pembayaran">
@@ -67,7 +70,7 @@
                 </button>
 
                 <!-- GOOGLE OAUTH LOGIN -->
-                <div class="border-t border-gray-300 relative mt-4 pt-6">
+                <div class="border-t border-gray-300 relative mt-4 pt-6 pb-2">
                     <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#FAF6F0] px-3 text-xs text-gray-500 font-medium">atau log masuk dengan</span>
                     
                     <div id="g_id_onload"
@@ -80,6 +83,14 @@
                     </div>
                 </div>
                 <!-- END GOOGLE OAUTH LOGIN -->
+
+                <!-- FACEBOOK LOGIN BUTTON -->
+                <div class="flex justify-center w-full mt-2">
+                    <button onclick="handleFacebookLogin()" class="w-full bg-[#1877F2] hover:bg-[#166FE5] text-white font-bold text-sm py-2.5 px-6 rounded shadow-sm flex items-center justify-center gap-2 transition duration-200 border border-[#1877F2]">
+                        <i class="fab fa-facebook-f text-lg"></i> Login dengan Facebook
+                    </button>
+                </div>
+                <!-- END FACEBOOK LOGIN -->
 
             </div>
         </main>
@@ -584,6 +595,34 @@
 
 
     <script>
+        // INIT FACEBOOK SDK
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '1433293475497065',
+                cookie     : true,
+                xfbml      : true,
+                version    : 'v20.0'
+            });
+        };
+
+        // FUNGSI HANDLE FACEBOOK LOGIN
+        function handleFacebookLogin() {
+            FB.login(function(response) {
+                if (response.authResponse) {
+                    console.log('Login Facebook berjaya! Mengambil maklumat pengguna...');
+                    FB.api('/me', {fields: 'name, email'}, function(userInfo) {
+                        console.log('Maklumat Facebook:', userInfo);
+                        const userEmail = userInfo.email ? userInfo.email : "Tiada e-mel didapati";
+                        alert("Log masuk Facebook berjaya!\n\nNama: " + userInfo.name + "\nE-mel: " + userEmail);
+                        
+                        // Anda boleh panggil fungsi logik di sini untuk setkan sesi login anda
+                    });
+                } else {
+                    console.log('Pengguna membatalkan login atau tidak memberi kebenaran.');
+                }
+            }, {scope: 'public_profile,email'});
+        }
+
         let timerInstance = null;
         let namaPelangganGlobal = "";
 

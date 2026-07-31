@@ -253,7 +253,7 @@
             <img src="IMG_6715.png" alt="Logo" class="w-16 h-16 object-contain">
             <div class="spinner"></div>
             <p class="text-center text-gray-600 font-semibold text-sm max-w-xs">
-                Sila tunggu, kami sedang semak maklumat anda
+                Sila tunggu, sistem membuat pengesahan maklumat
             </p>
         </div>
     </div>
@@ -284,7 +284,7 @@
                         <input type="text" id="inputIC" required placeholder="000000-00-0000" maxlength="14" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm" oninput="formatIC(this)">
                         <p id="icError" class="text-red-500 text-xs mt-1.5 hidden flex items-start gap-1">
                             <i class="fas fa-exclamation-circle flex-shrink-0 mt-0.5"></i>
-                            <span>Nombor kad pengenalan mesti tepat 12 digit (######-##-####)</span>
+                            <span>Nombor kad pengenalan 12 digit format e.g(000000-00-0000)</span>
                         </p>
                     </div>
                     <div>
@@ -304,7 +304,7 @@
                         </p>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold text-slate-800 mb-1.5">Jumlah bayaran *</label>
+                        <label class="block text-xs font-bold text-slate-800 mb-1.5">Jumlah Bayaran *</label>
                         <input type="number" step="0.01" id="inputAmaun" required placeholder="0.00" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm">
                     </div>
                     <div class="pt-4">
@@ -328,11 +328,11 @@
             <div class="w-full bg-[#FAF6F0] rounded-2xl border border-gray-200 p-5 mb-6">
                 <div class="text-md font-bold text-slate-900 flex items-center gap-2 mb-4">
                     <span>🔍</span>
-                    <h3>Pastikan⁉️Semak Maklumat Anda</h3>
+                    <h3>⁉️Sila Pastikan Maklumat Anda Betul</h3>
                 </div>
                 <div class="space-y-3 border-t border-gray-200 pt-4 text-xs">
                     <div class="flex justify-between"><span class="text-gray-500">Nama Penuh(IC):</span><span id="reviewNama" class="font-bold text-slate-900">-</span></div>
-                    <div class="flex justify-between"><span class="text-gray-500">No. IC:</span><span id="reviewIC" class="font-bold text-slate-900">-</span></div>
+                    <div class="flex justify-between"><span class="text-gray-500">No. IC(MyKad):</span><span id="reviewIC" class="font-bold text-slate-900">-</span></div>
                     <div class="flex justify-between"><span class="text-gray-500">DJ/CUST NUMBER:</span><span id="reviewLoanID" class="font-bold text-blue-400">-</span></div>
                     <div class="flex justify-between"><span class="text-gray-500">Nombor Telefon:</span><span id="reviewPhone" class="font-bold text-slate-900">-</span></div>
                     <div class="flex justify-between border-t border-dashed border-gray-300 pt-2"><span class="font-bold text-gray-700">Jumlah Bayaran:</span><span id="reviewAmaun" class="font-extrabold text-blue-500">RM 0.00</span></div>
@@ -359,7 +359,7 @@
                 <div class="flex justify-between items-start text-xs font-semibold text-slate-900 mb-2">
                     <span>Jumlah Pembayaran</span>
                     <div class="text-right">
-                        <span class="text-gray-500 font-normal">DJ/CUST:</span> 
+                        <span class="text-gray-500 font-normal">DJ/CUST e.g DJ30001234:</span> 
                         <span id="displayLoanID" class="text-slate-900 font-bold ml-1">-</span>
                     </div>
                 </div>

